@@ -69,7 +69,7 @@
                                 aria-label="Enter A String">
                         </div>
                         <div class="col-12">
-                            <button type="button" id="submit" class="btn btn-danger">Reverse Me</button>
+                            <button type="button" id="btnSubmit" class="btn btn-danger">Reverse Me</button>
                         </div>
                         <div class="alert alert-danger mt-5 invisible fade show" id="alert" role="alert">
                             <h4 class="alert-headding">Well Done!</h4>
@@ -114,6 +114,9 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
     </script>
     <script src="/js/site.js">
+    </script>
+    <script>
+        document.getElementById("btnSubmit").addEventListener("click", getValue);
     </script>
 </body>
 
