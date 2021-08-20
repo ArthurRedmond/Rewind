@@ -43,7 +43,7 @@
                         <a class="nav-link" target="_blank" href="https://github.com/ArthurRedmond/Rewind">Git Repo</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" target="_blank" href="#">About</a>
+                        <a class="nav-link" target="_blank" href="https://arthurredmond.com">About</a>
                     </li>
                 </ul>
             </div>
@@ -56,17 +56,45 @@
             <div class="row row-cols-1 row-cols-lg-2">
                 <div class="col-lg-8">
                     <pre class="line-numbers"><code class="language-javascript">
-                        //Call HelloWorld 
-                        function HelloWorld() {
-                            alert("Hello World");
+                        function getValue() {
+                            document.getElementById("alert").classList.add("invisible");
+                            let userString = document.getElementById("userString").value;
+                            let reversedString = reverseString(userString);
+                            displayString(reversedString);
+                        }
+                        
+                        function reverseString(userString) {
+                            let reversedString = "";
+                            for (let i = userString.length - 1; i >= 0; i--) {
+                                reversedString += userString[i];
+                            }
+                            return reversedString;
+                        }
+                        
+                        function displayString(reversedString) {
+                            document.getElementById("message").innerHTML = `Your string reveresed is: ${reversedString}`;
+                            document.getElementById("alert").classList.remove("invisible");
                         }
                     </code>
                     </pre>
                 </div>
                 <div class="col-lg-4">
-                    <p>The Code is structed in one function.</p>
-                    <h5>Hello World</h5>
-                    <p>Hello World is a function that displays an alert with a message of "Hello World"</p>
+                    <p>The Code is structured in three function.</p>
+                    <h5>getValue()</h5>
+                    <p>This function ensures the display element of the page is hidden by inserting the value of
+                        invisible into its class attribute. It then declares a variable to hold the user’s input and
+                        retrieves the value from the DOM. It then declares a variable with the value of the previous
+                        variable passed to the reverseString function. Finally, it passes that variable to the
+                        displayString function to display the message.</p>
+                    <h5>reverseString()</h5>
+                    <p>This function declares an empty string which will hold the reversed values of the string passed
+                        to the function. A for loop begins at the last index of the passed user value and appends it to
+                        the value of the reversedString variable and then returns this string.</p>
+                    <h5>displayString()</h5>
+                    <p>This function receives the passed value manipulated by the prior function and enters a string
+                        literal containing the value of the passed string into the document. It then removes the
+                        invisible value from the class attribute of the display element which causes the message to be
+                        visible. </p>
                 </div>
             </div>
         </div>
